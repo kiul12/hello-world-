@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网络2301</title>
+    <style type="text">
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .kuang{
+            position: relative;
+            width: 380px;
+            height: 60px;
+            border-radius: 5px;
+           /*  background-color: rgba(204, 197, 197,.5); */
+            box-shadow: inset 5px 5px 10px rgba(204, 197, 197,.5),
+                        inset -5px -5px 8px rgba(204, 197, 197,.5);
+        }
+        .kuang input{
+            position: absolute;
+            top: 0;
+            left: 20px;
+            height: 100%;
+            width: 300px;
+            font-size: 18px;
+            outline: none;
+            border: none;
+            background-color:transparent;
+        }
+        .kuang input::placeholder{
+            color: rgba(68, 67, 67,.8);
+        }
+        .conceal{
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 30px;
+            height: 30px;
+            background-image: url(mima/xianshi.png);
+            background-size: 100% 100%;   
+            cursor: pointer;
+        }
+        .conceal.yincang{
+            background-image: url(mima/yincang.png);
+            background-size: 100% 100%; 
+        }
+        .first_all{
+            background-color: palevioletred;
+            width: 150px;
+            height: 200px;
+            
+        }
+    </style>
+</head>
+<body>
+    <h1 align="center" >网络2301班</h1>
+    <hr>
+    <div class="first_all">
+    <form action="#">
+        <ul>
+            <li>
+                <div>
+                <label for="username">用户名：</label>
+                <input type="text" id="username" placeholder="请输入账号">
+                </div>
+            </li>
+            <li>
+                <div class="kuang">
+                    <label for="password">密&nbsp;码：   </label>
+                    &nbsp; <input type="password" placeholder="  请输入密码" id='password' > 
+                    <div class="conceal" id='conceal'></div>
+                </div>
+                <script>
+                    var password = document.getElementById('password');
+                    var anniu = document.getElementById('conceal');
+                    anniu.addEventListener('click',function(){
+                        if(password.type==='password')
+                        {
+                            password.setAttribute('type','text');
+                            anniu.classList.add('yincang');
+                        }else{
+                         password.setAttribute('type','password');
+                            anniu.classList.remove('yincang');
+                        }
+                    })
+                </script>
+            </li>
+        </ul>
+    <span ><input type="button" value="登入"></span>
+    </form>
+    </div>
+</body>
+</html>

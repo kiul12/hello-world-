@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>登录表单</title>
+<style>
+    .yincang {
+        /* 当按钮处于显示密码状态时的样式 */
+        color: red; /* 示例样式，可以根据实际情况修改 */
+    }
+</style>
+</head>
+<body>
+
+<form action="/login" method="post">
+    <div>
+        <label for="username">用户名:</label>
+        <input type="text" id="username" name="username" required>
+    </div>
+    <div>
+        <label for="password">密码:</label>
+        <input type="password" id="password" name="password" required>
+        <button id="conceal" type="button">显示密码</button>
+    </div>
+    <div>
+        <button type="submit">登录</button>
+    </div>
+</form>
+
+<script>
+    var password = document.getElementById('password');
+    var anniu = document.getElementById('conceal');
+    anniu.addEventListener('click', function () {
+        if (password.type === 'password') {
+            password.setAttribute('type', 'text');
+            anniu.classList.add('yincang');
+        } else {
+            password.setAttribute('type', 'password');
+            anniu.classList.remove('yincang');
+        }
+    });
+</script>
+
+</body>
+</html>
