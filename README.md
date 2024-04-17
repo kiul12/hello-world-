@@ -1,2 +1,2 @@
-# hello-world-
-这是我的第一个GitHub
+这是我在校期间，学习前端web学习的仓库
+
